@@ -1,4 +1,6 @@
-package com.metatron.tech.spring_boot_pet_clinic.model;
+package com.metatron.tech.model;
+
+import com.metatron.tech.model.PetType;
 
 import java.time.LocalDate;
 
