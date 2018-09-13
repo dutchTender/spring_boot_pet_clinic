@@ -1,7 +1,5 @@
 package com.metatron.tech.model;
 
-import com.metatron.tech.model.PetType;
-
 import java.time.LocalDate;
 
 public class Pet {
