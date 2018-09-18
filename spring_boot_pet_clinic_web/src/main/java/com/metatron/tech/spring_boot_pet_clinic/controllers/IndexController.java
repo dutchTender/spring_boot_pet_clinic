@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
-       @RequestMapping({"", "/","index", "templates/index.html"})
+       @RequestMapping({"", "/","/index", "/index.html"})
        public String index(){
            // get owner info
            return "index";
