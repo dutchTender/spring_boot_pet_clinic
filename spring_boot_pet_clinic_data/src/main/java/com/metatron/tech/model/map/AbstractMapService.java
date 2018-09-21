@@ -1,17 +1,15 @@
 package com.metatron.tech.model.map;
 
 
+import com.metatron.tech.model.BaseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Service
-public abstract class AbstractMapService<T, ID> {
+public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
-    protected Map<ID, T> map = new HashMap<>();
+    protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll(){
         return new HashSet<>(map.values());
@@ -21,8 +19,17 @@ public abstract class AbstractMapService<T, ID> {
         return map.get(id);
     }
 
-    T save(ID id,T object){
-        map.put(id,object);
+    T save(T object){
+        if(object != null){
+            if(object.getId() == null){
+                object.setId(getNextID());
+            }
+        }
+        else{
+            throw new RuntimeException("object can not be null");
+        }
+
+        map.put(object.getId(),object);
 
         return object;
     }
@@ -38,4 +45,16 @@ public abstract class AbstractMapService<T, ID> {
 
     }
 
+    private Long getNextID(){
+
+        Long nextID;
+        if(map.size() > 0) { nextID = Collections.max(map.keySet()) + 1;
+        }
+        else
+        {
+           nextID = 1L;
+        }
+        return nextID;
+
+    }
 }
