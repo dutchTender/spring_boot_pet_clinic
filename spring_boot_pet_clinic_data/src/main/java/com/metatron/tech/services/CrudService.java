@@ -1,7 +1,9 @@
 package com.metatron.tech.services;
 
-import java.util.Set;
+import org.springframework.stereotype.Component;
 
+import java.util.Set;
+@Component
 public interface CrudService<T, ID> {
     Set<T> findAll();
     T findById(Long id);

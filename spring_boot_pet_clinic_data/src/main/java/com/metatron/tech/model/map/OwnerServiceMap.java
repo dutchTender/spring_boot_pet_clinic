@@ -1,11 +1,13 @@
 package com.metatron.tech.model.map;
 
 import com.metatron.tech.model.Owner;
-import com.metatron.tech.services.CrudService;
+import com.metatron.tech.services.OwnerService;
+
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+@Service("ownerService")
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -31,5 +33,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     public void deleteById(Long id) {
         super.deleteById(id);
 
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

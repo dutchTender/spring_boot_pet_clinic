@@ -2,11 +2,26 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Vets Directory</title>
+    <title>Pet Clinic welcome page!!</title>
 </head>
 <body>
 
-<h1 th:text="'Vets Directory'">welcome to pet clinic</h1>
+<h1 th:text="'welcome page'">welcome to pet clinic</h1>
+
+<h1>Vets List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <tr th:each="vet : ${vets}">
+        <td th:text="${vet.id}">123</td>
+        <td th:text="${vet.firstName}">Spring in Action</td>
+        <td th:text="${vet.lastName}">Wrox</td>
+    </tr>
+</table>
 
 </body>
 </html>
