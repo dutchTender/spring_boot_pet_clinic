@@ -1,12 +1,12 @@
 package com.metatron.tech.model.map;
 
 import com.metatron.tech.model.Pet;
-import com.metatron.tech.services.CrudService;
+
 import com.metatron.tech.services.PetService;
-import org.springframework.stereotype.Service;
+
 
 import java.util.Set;
-@Service
+
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
 

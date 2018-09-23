@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 
 /* below annotations are used for finding beabs in the data module*/
-@EnableJpaRepositories(basePackages = {"com.metatron.tech"})
-@EntityScan(basePackages = {"com.metatron.tech"})
+//@EnableJpaRepositories(basePackages = {"com.metatron.tech"})
+//@EntityScan(basePackages = {"com.metatron.tech"})
 @ComponentScan(basePackages = {"com.metatron.tech"})
 
 
