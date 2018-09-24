@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class DataLoader  implements ApplicationListener<ContextRefreshedEvent> {
 
 
-
+    /*Constructor DI for ServiceBeanFactoryClass*/
     public DataLoader(ServiceBeanFactory serviceBeanFactory) {
         this.serviceBeanFactory = serviceBeanFactory;
     }

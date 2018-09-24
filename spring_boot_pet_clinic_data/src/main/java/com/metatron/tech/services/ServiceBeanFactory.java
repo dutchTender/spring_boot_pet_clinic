@@ -3,14 +3,14 @@ package com.metatron.tech.services;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class ServiceBeanFactory {
 
     private  final  VetService vetService;
     private  final  OwnerService ownerService;
     private  final  PetService petService;
 
-
+    /* Constructor DI for VetService, OwnerService, PetService*/
     public ServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService) {
         this.vetService = vetService;
         this.ownerService = ownerService;
