@@ -44,6 +44,17 @@ public class ServicesBeanConfig {
         return propertySourcesPlaceholderConfigurer;
     }
 
+
+    /*create a test bean and inject that returns some bean like below...
+    * but before returning. set the values from the property file...this will allow that singleton bean to get the property
+    * file value each time it is loaded by spring*/
+
+    /*also test out the applicationContextFactory method again ...make sure we are actually getting values from the property
+    * file for the bean not found exception*/
+
+
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*DI for ServiceBeanFactory ..which will call the 3 services below to initialize its constructor parameter list*/
@@ -59,16 +70,7 @@ public class ServicesBeanConfig {
     public VetService getVetService(){
 
 
-        Object vetService;
-        try {
-            Class<?> clazz = Class.forName(vetServiceClass);
-            vetService = (VetService) clazz.newInstance();
-        } catch (ReflectiveOperationException ex) {
-            System.out.println("no VetService bean found!!! default VetService implementation injected");
-            vetService = new VetServiceMap();
-        }
-
-        return  (VetService) vetService;
+       return new VetServiceMap();
     }
 
 
@@ -77,17 +79,7 @@ public class ServicesBeanConfig {
      * Spring container will call this method when a type of OwnerService is requested by the spring context */
     @Bean
     public OwnerService getOwnerService(){
-        Object ownerService;
-        try{
-            Class<?> clazz = Class.forName(ownerServiceClass);
-            ownerService = (OwnerService) clazz.newInstance();
-        }
-        catch(ReflectiveOperationException ex){
-            System.out.println("no OwnerService bean found!!!! default OwnerService implementation injected");
-            ownerService = new OwnerServiceMap();
-
-        }
-         return (OwnerService) ownerService;
+            return new OwnerServiceMap();
 
     }
 
@@ -97,17 +89,7 @@ public class ServicesBeanConfig {
     @Bean
     public PetService getPetService(){
 
-        Object petService;
-        try{
-            Class<?> clazz = Class.forName(petServiceClass);
-            petService = (PetService) clazz.newInstance();
-        }
-        catch(ReflectiveOperationException ex){
-            System.out.println("no PetService bean found!!!! default PetService implementation injected");
-            petService = new PetServiceMap();
-
-        }
-        return (PetService) petService;
+        return new PetServiceMap();
 
     }
 
