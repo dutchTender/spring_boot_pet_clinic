@@ -1,11 +1,11 @@
 package com.metatron.tech.spring_boot_pet_clinic.bootstrap;
 
 
-import com.metatron.tech.model.Owner;
-import com.metatron.tech.model.Vet;
-import com.metatron.tech.services.OwnerService;
-import com.metatron.tech.services.ServiceBeanFactory;
-import com.metatron.tech.services.VetService;
+import com.metatron.tech.model.entities.Owner;
+import com.metatron.tech.model.entities.Vet;
+import com.metatron.tech.model.services.OwnerService;
+import com.metatron.tech.model.services.ServiceBeanFactory;
+import com.metatron.tech.model.services.VetService;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;

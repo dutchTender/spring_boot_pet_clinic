@@ -1,7 +1,7 @@
-package com.metatron.tech.model.map;
+package com.metatron.tech.model.map_Repositories;
 
-import com.metatron.tech.model.Owner;
-import com.metatron.tech.services.OwnerService;
+import com.metatron.tech.model.entities.Owner;
+import com.metatron.tech.model.services.OwnerService;
 
 
 

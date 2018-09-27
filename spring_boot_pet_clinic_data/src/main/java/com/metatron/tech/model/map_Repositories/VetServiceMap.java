@@ -1,7 +1,7 @@
-package com.metatron.tech.model.map;
+package com.metatron.tech.model.map_Repositories;
 
-import com.metatron.tech.model.Vet;
-import com.metatron.tech.services.VetService;
+import com.metatron.tech.model.entities.Vet;
+import com.metatron.tech.model.services.VetService;
 
 import java.util.Set;
 

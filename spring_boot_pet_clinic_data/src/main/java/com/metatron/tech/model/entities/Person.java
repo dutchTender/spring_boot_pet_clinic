@@ -1,4 +1,4 @@
-package com.metatron.tech.model;
+package com.metatron.tech.model.entities;
 
 public class Person  extends BaseEntity{
     private String firstName;

@@ -1,7 +1,4 @@
-package com.metatron.tech.services;
-
-
-import org.springframework.stereotype.Component;
+package com.metatron.tech.model.services;
 
 
 public class ServiceBeanFactory {

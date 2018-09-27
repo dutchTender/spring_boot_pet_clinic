@@ -1,13 +1,13 @@
 package com.metatron.tech.config;
 
 
-import com.metatron.tech.model.map.OwnerServiceMap;
-import com.metatron.tech.model.map.PetServiceMap;
-import com.metatron.tech.model.map.VetServiceMap;
-import com.metatron.tech.services.OwnerService;
-import com.metatron.tech.services.PetService;
-import com.metatron.tech.services.ServiceBeanFactory;
-import com.metatron.tech.services.VetService;
+import com.metatron.tech.model.map_Repositories.OwnerServiceMap;
+import com.metatron.tech.model.map_Repositories.PetServiceMap;
+import com.metatron.tech.model.map_Repositories.VetServiceMap;
+import com.metatron.tech.model.services.OwnerService;
+import com.metatron.tech.model.services.PetService;
+import com.metatron.tech.model.services.ServiceBeanFactory;
+import com.metatron.tech.model.services.VetService;
 
 import org.springframework.beans.factory.annotation.Value;
 

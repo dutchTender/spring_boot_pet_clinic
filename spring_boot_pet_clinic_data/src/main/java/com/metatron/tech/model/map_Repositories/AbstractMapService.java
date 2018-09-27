@@ -1,7 +1,7 @@
-package com.metatron.tech.model.map;
+package com.metatron.tech.model.map_Repositories;
 
 
-import com.metatron.tech.model.BaseEntity;
+import com.metatron.tech.model.entities.BaseEntity;
 
 
 import java.util.*;
