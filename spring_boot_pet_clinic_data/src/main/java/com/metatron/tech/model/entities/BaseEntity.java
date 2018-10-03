@@ -1,9 +1,15 @@
 package com.metatron.tech.model.entities;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Long getId() {
@@ -13,4 +19,6 @@ public class BaseEntity implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }
