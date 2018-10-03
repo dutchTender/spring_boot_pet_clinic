@@ -4,7 +4,10 @@ package com.metatron.tech.config;
 import com.metatron.tech.model.JPA_Repositories.OwnerRepository;
 import com.metatron.tech.model.JPA_Repositories.PetRepository;
 import com.metatron.tech.model.JPA_Repositories.PetTypeRepository;
+import com.metatron.tech.model.JPA_Repositories.VetRepository;
 import com.metatron.tech.model.JPA_Repository_Services.Owner_JPA_Service;
+import com.metatron.tech.model.JPA_Repository_Services.Pet_JPA_Service;
+import com.metatron.tech.model.JPA_Repository_Services.Vet_JPA_Service;
 import com.metatron.tech.model.map_Repositories.PetServiceMap;
 import com.metatron.tech.model.map_Repositories.VetServiceMap;
 import com.metatron.tech.model.services.OwnerService;
@@ -70,13 +73,13 @@ public class ServicesBeanConfig {
     /*DI for VetService
      * Spring container will call this method when a type of VetService is requested by the spring context */
     @Bean
-    public VetService getVetService(){
+    public VetService getVetService(VetRepository vetRepository){
 
 
-       return new VetServiceMap();
-    }
+     //return new VetServiceMap();
+return new Vet_JPA_Service(vetRepository);
 
-
+}
     /*DI for OwnerService
      * Spring container will call this method when a type of OwnerService is requested by the spring context */
     @Bean
@@ -89,9 +92,10 @@ public class ServicesBeanConfig {
     /*DI for PetService
      * Spring container will call this method when a type of PetService is requested by the spring context */
     @Bean
-    public PetService getPetService(){
+    public PetService getPetService(PetRepository petRepository){
 
-        return new PetServiceMap();
+        //return new PetServiceMap();
+        return new Pet_JPA_Service(petRepository);
 
     }
 

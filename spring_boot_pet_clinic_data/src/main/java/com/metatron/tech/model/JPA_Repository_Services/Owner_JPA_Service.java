@@ -8,8 +8,7 @@ import com.metatron.tech.model.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 
 @Service
@@ -50,7 +49,9 @@ public class Owner_JPA_Service implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
-        return(Set<Owner>) ownerRepository.findAll();
+        Set<Owner> owners = new HashSet<>();
+        ownerRepository.findAll().forEach(owner -> owners.add(owner));
+        return owners;
     }
 
     @Override
