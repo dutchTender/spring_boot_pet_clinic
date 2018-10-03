@@ -1,17 +1,9 @@
 package com.metatron.tech.config;
 
 
-import com.metatron.tech.model.JPA_Repositories.OwnerRepository;
-import com.metatron.tech.model.JPA_Repositories.PetRepository;
-import com.metatron.tech.model.JPA_Repositories.PetTypeRepository;
-import com.metatron.tech.model.JPA_Repositories.VetRepository;
-import com.metatron.tech.model.JPA_Repository_Services.Owner_JPA_Service;
-import com.metatron.tech.model.JPA_Repository_Services.Pet_JPA_Service;
-import com.metatron.tech.model.JPA_Repository_Services.Vet_JPA_Service;
-import com.metatron.tech.model.services.OwnerService;
-import com.metatron.tech.model.services.PetService;
-import com.metatron.tech.model.services.ServiceBeanFactory;
-import com.metatron.tech.model.services.VetService;
+import com.metatron.tech.model.JPA_Repositories.*;
+import com.metatron.tech.model.JPA_Repository_Services.*;
+import com.metatron.tech.model.services.*;
 
 import org.springframework.beans.factory.annotation.Value;
 
@@ -63,8 +55,8 @@ public class ServicesBeanConfig {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*DI for ServiceBeanFactory ..which will call the 3 services below to initialize its constructor parameter list*/
     @Bean
-    ServiceBeanFactory getServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService){
-        return new ServiceBeanFactory(vetService,ownerService, petService);
+    ServiceBeanFactory getServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService){
+        return new ServiceBeanFactory(vetService,ownerService, petService, petTypeService, specialtyService, visitService);
     }
 
 
@@ -95,6 +87,19 @@ public class ServicesBeanConfig {
         //return new PetServiceMap();
         return new Pet_JPA_Service(petRepository);
 
+    }
+
+    @Bean
+    public PetTypeService getPetTypeService(PetTypeRepository petTypeRepository){
+        return new PetType_JPA_Service(petTypeRepository);
+    }
+
+    @Bean VisitService getVisitService(VisitRepository visitRepository){
+        return new Visit_JPA_Service(visitRepository);
+    }
+
+    @Bean SpecialtyService getSpecialtyService(SpecialtyRepository specialtyRepository){
+        return new Specialty_JPA_Service(specialtyRepository);
     }
 
 }
