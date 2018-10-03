@@ -4,7 +4,7 @@ import com.metatron.tech.model.entities.Owner;
 import com.metatron.tech.model.services.OwnerService;
 
 
-
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -17,7 +17,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner findById(Long id) {
+    public Optional<Owner> findById(Long id) {
         return super.findById(id);
     }
 

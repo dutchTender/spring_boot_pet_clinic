@@ -3,6 +3,7 @@ package com.metatron.tech.model.map_Repositories;
 import com.metatron.tech.model.entities.Vet;
 import com.metatron.tech.model.services.VetService;
 
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -14,7 +15,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
     }
 
     @Override
-    public Vet findById(Long id) {
+    public Optional<Vet> findById(Long id) {
         return super.findById(id);
     }
 

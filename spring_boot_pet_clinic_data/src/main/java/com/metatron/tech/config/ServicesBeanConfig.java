@@ -1,7 +1,10 @@
 package com.metatron.tech.config;
 
 
-import com.metatron.tech.model.map_Repositories.OwnerServiceMap;
+import com.metatron.tech.model.JPA_Repositories.OwnerRepository;
+import com.metatron.tech.model.JPA_Repositories.PetRepository;
+import com.metatron.tech.model.JPA_Repositories.PetTypeRepository;
+import com.metatron.tech.model.JPA_Repository_Services.Owner_JPA_Service;
 import com.metatron.tech.model.map_Repositories.PetServiceMap;
 import com.metatron.tech.model.map_Repositories.VetServiceMap;
 import com.metatron.tech.model.services.OwnerService;
@@ -74,13 +77,12 @@ public class ServicesBeanConfig {
     }
 
 
-
     /*DI for OwnerService
      * Spring container will call this method when a type of OwnerService is requested by the spring context */
     @Bean
-    public OwnerService getOwnerService(){
-            return new OwnerServiceMap();
-
+    public OwnerService getOwnerService(OwnerRepository ownerRepsitory, PetRepository petRepository, PetTypeRepository petTypeRepository){
+          return new Owner_JPA_Service(ownerRepsitory, petRepository, petTypeRepository);
+            //return new OwnerServiceMap();  // map implementation
     }
 
 
@@ -93,9 +95,5 @@ public class ServicesBeanConfig {
 
     }
 
-
-
-
-
-
 }
+

@@ -5,7 +5,7 @@ import com.metatron.tech.model.entities.Pet;
 import com.metatron.tech.model.services.PetService;
 
 
-
+import java.util.Optional;
 import java.util.Set;
 
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
@@ -17,7 +17,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Optional<Pet> findById(Long id) {
         return super.findById(id);
     }
 
