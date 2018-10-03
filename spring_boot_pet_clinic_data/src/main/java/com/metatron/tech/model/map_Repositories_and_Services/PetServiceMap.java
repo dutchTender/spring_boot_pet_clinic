@@ -1,4 +1,4 @@
-package com.metatron.tech.model.map_Repositories;
+package com.metatron.tech.model.map_Repositories_and_Services;
 
 import com.metatron.tech.model.entities.Pet;
 
