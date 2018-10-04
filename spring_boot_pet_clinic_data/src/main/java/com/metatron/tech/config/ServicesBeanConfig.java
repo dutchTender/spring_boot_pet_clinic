@@ -5,10 +5,10 @@ import com.metatron.tech.model.JPA_Repositories.*;
 import com.metatron.tech.model.JPA_Repository_Services.*;
 import com.metatron.tech.model.services.*;
 
+import com.metatron.tech.model.services.serviceFactories.ServiceBeanFactory;
 import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
