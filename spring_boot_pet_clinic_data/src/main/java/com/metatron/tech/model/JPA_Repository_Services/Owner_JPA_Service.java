@@ -5,6 +5,7 @@ import com.metatron.tech.model.JPA_Repositories.PetRepository;
 import com.metatron.tech.model.JPA_Repositories.PetTypeRepository;
 import com.metatron.tech.model.entities.Owner;
 import com.metatron.tech.model.services.OwnerService;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,7 @@ public class Owner_JPA_Service implements OwnerService {
     ///////////////////////////////////////////////////////////////////////////
 
 
+
     public OwnerRepository getOwnerRepository() {
         return ownerRepository;
     }
@@ -51,6 +53,8 @@ public class Owner_JPA_Service implements OwnerService {
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
         ownerRepository.findAll().forEach(owner -> owners.add(owner));
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+
         return owners;
     }
 

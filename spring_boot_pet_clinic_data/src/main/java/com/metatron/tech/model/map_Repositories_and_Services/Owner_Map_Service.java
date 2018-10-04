@@ -2,22 +2,27 @@ package com.metatron.tech.model.map_Repositories_and_Services;
 
 import com.metatron.tech.model.entities.Owner;
 import com.metatron.tech.model.services.OwnerService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Optional;
 import java.util.Set;
 
 
-
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+@Service
+@Profile("map")
+public class Owner_Map_Service extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         return super.findAll();
     }
 
     @Override
     public Optional<Owner> findById(Long id) {
+
         return super.findById(id);
     }
 

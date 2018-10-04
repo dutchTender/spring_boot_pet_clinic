@@ -1,14 +1,18 @@
 package com.metatron.tech.model.services;
 
 
-public class ServiceBeanFactory {
 
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
+
+@Component
+//@Profile("JPA")
+public class ServiceBeanFactory{
     private  final  VetService vetService;
     private  final  OwnerService ownerService;
     private  final  PetService petService;
     private  final  PetTypeService petTypeService;
     private  final  SpecialtyService specialtyService;
-
     private  final  VisitService visitService;
 
 

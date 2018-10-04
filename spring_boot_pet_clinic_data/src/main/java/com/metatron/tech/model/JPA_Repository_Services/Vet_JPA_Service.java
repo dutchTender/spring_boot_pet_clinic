@@ -15,9 +15,8 @@ import java.util.Set;
 @Profile("JPA")
 public class Vet_JPA_Service implements VetService {
 
+
     private VetRepository vetRepository;
-
-
     public Vet_JPA_Service(VetRepository vetRepository) {
         this.vetRepository = vetRepository;
     }

@@ -3,11 +3,14 @@ package com.metatron.tech.model.JPA_Repository_Services;
 import com.metatron.tech.model.JPA_Repositories.VisitRepository;
 import com.metatron.tech.model.entities.Visit;
 import com.metatron.tech.model.services.VisitService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-
+@Service
+@Profile("JPA")
 public class Visit_JPA_Service implements VisitService {
 
     VisitRepository visitRepository;

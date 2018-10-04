@@ -3,12 +3,17 @@ package com.metatron.tech.model.map_Repositories_and_Services;
 import com.metatron.tech.model.entities.Pet;
 
 import com.metatron.tech.model.services.PetService;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Optional;
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
+
+@Service
+@Profile("map")
+public class Pet_Map_Service extends AbstractMapService<Pet, Long> implements PetService{
 
 
     @Override
