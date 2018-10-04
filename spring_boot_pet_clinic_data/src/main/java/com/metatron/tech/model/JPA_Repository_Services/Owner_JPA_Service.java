@@ -5,11 +5,12 @@ import com.metatron.tech.model.JPA_Repositories.PetRepository;
 import com.metatron.tech.model.JPA_Repositories.PetTypeRepository;
 import com.metatron.tech.model.entities.Owner;
 import com.metatron.tech.model.services.OwnerService;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 
 @Service
@@ -30,19 +31,6 @@ public class Owner_JPA_Service implements OwnerService {
     }
     ///////////////////////////////////////////////////////////////////////////
 
-
-
-    public OwnerRepository getOwnerRepository() {
-        return ownerRepository;
-    }
-
-    public PetRepository getPetRepository() {
-        return petRepository;
-    }
-
-    public PetTypeRepository getPetTypeRepository() {
-        return petTypeRepository;
-    }
 
     @Override
     public Owner findByLastName(String lastName) {
@@ -80,5 +68,57 @@ public class Owner_JPA_Service implements OwnerService {
 
         ownerRepository.deleteById(id);
 
+    }
+
+    public OwnerRepository getOwnerRepository() {
+        return this.ownerRepository;
+    }
+
+    public PetRepository getPetRepository() {
+        return this.petRepository;
+    }
+
+    public PetTypeRepository getPetTypeRepository() {
+        return this.petTypeRepository;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) return true;
+        if (!(o instanceof Owner_JPA_Service)) return false;
+        final Owner_JPA_Service other = (Owner_JPA_Service) o;
+        if (!other.canEqual((Object) this)) return false;
+        final Object this$ownerRepository = this.getOwnerRepository();
+        final Object other$ownerRepository = other.getOwnerRepository();
+        if (this$ownerRepository == null ? other$ownerRepository != null : !this$ownerRepository.equals(other$ownerRepository))
+            return false;
+        final Object this$petRepository = this.getPetRepository();
+        final Object other$petRepository = other.getPetRepository();
+        if (this$petRepository == null ? other$petRepository != null : !this$petRepository.equals(other$petRepository))
+            return false;
+        final Object this$petTypeRepository = this.getPetTypeRepository();
+        final Object other$petTypeRepository = other.getPetTypeRepository();
+        if (this$petTypeRepository == null ? other$petTypeRepository != null : !this$petTypeRepository.equals(other$petTypeRepository))
+            return false;
+        return true;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $ownerRepository = this.getOwnerRepository();
+        result = result * PRIME + ($ownerRepository == null ? 43 : $ownerRepository.hashCode());
+        final Object $petRepository = this.getPetRepository();
+        result = result * PRIME + ($petRepository == null ? 43 : $petRepository.hashCode());
+        final Object $petTypeRepository = this.getPetTypeRepository();
+        result = result * PRIME + ($petTypeRepository == null ? 43 : $petTypeRepository.hashCode());
+        return result;
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof Owner_JPA_Service;
+    }
+
+    public String toString() {
+        return "Owner_JPA_Service(ownerRepository=" + this.getOwnerRepository() + ", petRepository=" + this.getPetRepository() + ", petTypeRepository=" + this.getPetTypeRepository() + ")";
     }
 }
