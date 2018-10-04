@@ -29,9 +29,11 @@ public class Pet extends BaseEntity {
     @Column(name="birth_date")
     private LocalDate birth_date;
 
-
+    //add an image field for the pet object
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
+
+
 
 
 }

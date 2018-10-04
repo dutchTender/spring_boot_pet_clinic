@@ -1,26 +1,40 @@
 package com.metatron.tech.model.entities;
 
 
-import com.sun.istack.internal.NotNull;
+
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+
+import javax.persistence.*;
 
 @Setter
 @Getter
-@MappedSuperclass
+@Entity
 
 public class Person  extends BaseEntity{
 
     @Column(name = "first_name")
-    @NotNull
+
     private String firstName;
 
     @Column(name = "last_name")
-    @NotNull
+
     private String lastName;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name="city")
+    private String city;
+
+    @Column(name="telephone")
+    private String telephone;
+
+    // add image object for user profile picture
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private SecurityCredentials securityCredentials;
 
 
 }

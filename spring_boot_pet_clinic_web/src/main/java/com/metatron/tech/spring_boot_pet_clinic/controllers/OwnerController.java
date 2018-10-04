@@ -21,4 +21,24 @@ public class OwnerController {
         model.addAttribute("owners", ownerService.findAll());
         return "owners/index";
     }
+
+
+    // get parameter from login in form ...
+    // use that to find the correct owner bean and add to model
+    // we will disable the list all owners section as that does not make any sense for a owner to see all other owners
+
+    @RequestMapping({"/owner"})
+    public String listOwner(Model model){
+
+        // get login id
+
+        // use that to find the owner
+        // add it to model
+        // and return view
+
+
+        return "my-home";
+    }
+
+
 }
