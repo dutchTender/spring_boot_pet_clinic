@@ -1,5 +1,8 @@
 <!doctype html>
-<html th:fragment="layout (template, menu)">
+<html th:fragment="layout (template, menu)"
+
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
   <head>
 
@@ -66,7 +69,11 @@
 
                   <li th:replace="::menuItem ('/logout','logout','sign out', 'log-out','logout')">
                       <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+
                       <span>Error</span>
+                  </li>
+                  <li th:replace="::menuItem ('/owner','user_id','user id', 'user id','id')">
+
                   </li>
               </ul>
           </div>
