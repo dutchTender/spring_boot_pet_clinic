@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home","/resources/**", "/h2-console/**", "/console/**").permitAll()
+                .antMatchers("/", "/resources/**", "/h2-console/**", "/console/**").permitAll()
 
                 .anyRequest().authenticated()
                 .and()
@@ -28,12 +28,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
+                .permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/logoutHome")
                 .permitAll();
 
         http.csrf().disable();
         http.headers().frameOptions().disable();
     }
 
+
+
+    // in memory user and roles
+    // we will replace this with a database version
+
+    // also we will do one with oAuth (web Identity management service)
 
     @Bean
     @Override
