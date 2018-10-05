@@ -20,7 +20,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers( "/resources/**", "/h2-console/**", "/console/**").permitAll()
-
+                .antMatchers("/vets**","/owners**").hasRole("vet")
+                .antMatchers("/owners","owner","/pet").hasRole("owner")
+                .antMatchers("/owner**","/vet**","/pet**").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -35,10 +37,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login")
                 .permitAll();
 
+
+
+        // supports h2-console access
         http.csrf().disable();
         http.headers().frameOptions().disable();
     }
-
 
 
     // in memory user and roles
@@ -53,19 +57,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 User.withDefaultPasswordEncoder()
                         .username("admin")
                         .password("admin")
-                        .roles("USER")
+                        .roles("owner")
                         .build();
         UserDetails user2 =
                 User.withDefaultPasswordEncoder()
                         .username("lzhang421@gmail.com")
                         .password("admin")
-                        .roles("USER")
+                        .roles("owner")
                         .build();
         UserDetails user3 =
                 User.withDefaultPasswordEncoder()
                         .username("beskola@gmail.com")
                         .password("admin")
-                        .roles("USER")
+                        .roles("owner")
                         .build();
         return new InMemoryUserDetailsManager(user,user2,user3);
     }

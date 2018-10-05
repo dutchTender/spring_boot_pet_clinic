@@ -34,7 +34,7 @@ public class Person  extends BaseEntity{
     // add image object for user profile picture
 
     @OneToOne(cascade = CascadeType.ALL)
-    private SecurityCredentials securityCredentials;
+    private User user;
 
 
 }
