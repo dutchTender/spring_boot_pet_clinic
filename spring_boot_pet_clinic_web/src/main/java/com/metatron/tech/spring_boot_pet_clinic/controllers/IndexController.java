@@ -21,10 +21,5 @@ public class IndexController {
        }
 
 
-    @RequestMapping({"/logoutHome"})
-    public String logout(){
 
-        System.out.println("1111111111111111111111111111111111111111111111111111111");
-        return "welcome";
-    }
 }
