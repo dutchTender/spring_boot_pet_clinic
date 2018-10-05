@@ -9,11 +9,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
 
 import javax.sql.DataSource;
 
@@ -53,10 +51,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/resources/**", "/h2-console/**", "/console/**").permitAll()
-                .antMatchers("/vets**","/owners**").hasRole("vet")
-                .antMatchers("/owners","owner","/pet").hasRole("owner")
-                .antMatchers("/owner**","/vet**","/pet**").hasRole("admin")
+                .antMatchers( "/resources/**", "/h2-console/**", "/console/**","/webjars/**").permitAll()
+                //.antMatchers("/vets**","/owners**").hasRole("vet")
+                //.antMatchers("/owners","owner","/pet").hasRole("owner")
+                //.antMatchers("/owner**","/vet**","/pet**").hasRole("admin")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
