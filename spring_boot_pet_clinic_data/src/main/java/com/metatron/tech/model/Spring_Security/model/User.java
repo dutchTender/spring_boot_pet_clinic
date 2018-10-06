@@ -1,7 +1,7 @@
-package com.metatron.tech.model.Spring_Security;
+package com.metatron.tech.model.Spring_Security.model;
 
 
-import com.metatron.tech.model.entities.BaseEntity;
+
 import com.metatron.tech.model.entities.Person;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
@@ -13,7 +13,13 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name="user")
-public class User extends BaseEntity {
+public class User  {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="user_id")
+    private Long id;
+
     @Column(name = "name")
     @NotEmpty(message = "*Please provide your name")
     private String username;
@@ -29,7 +35,7 @@ public class User extends BaseEntity {
     private String email;
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> roles;
 

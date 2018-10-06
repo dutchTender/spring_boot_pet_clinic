@@ -14,14 +14,18 @@ public class ServiceBeanFactory{
     private  final SpecialtyService specialtyService;
     private  final  VisitService visitService;
 
+    private final RoleService roleService;
+    private final UsersService usersService;
 
-    public ServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
+    public ServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, RoleService roleService, UsersService usersService) {
         this.vetService = vetService;
         this.ownerService = ownerService;
         this.petService = petService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
         this.visitService = visitService;
+        this.roleService = roleService;
+        this.usersService = usersService;
     }
 
 
@@ -47,5 +51,13 @@ public class ServiceBeanFactory{
 
     public VisitService getVisitService() {
         return visitService;
+    }
+
+    public RoleService getRoleService() {
+        return roleService;
+    }
+
+    public UsersService getUsersService() {
+        return usersService;
     }
 }
