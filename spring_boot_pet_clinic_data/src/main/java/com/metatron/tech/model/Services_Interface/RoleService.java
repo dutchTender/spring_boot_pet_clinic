@@ -1,6 +1,6 @@
-package com.metatron.tech.model.services;
+package com.metatron.tech.model.Services_Interface;
 
-import com.metatron.tech.model.Spring_Security.model.Role;
+import com.metatron.tech.model.entities.Role;
 
 public interface RoleService extends  CrudService<Role, Long> {
 

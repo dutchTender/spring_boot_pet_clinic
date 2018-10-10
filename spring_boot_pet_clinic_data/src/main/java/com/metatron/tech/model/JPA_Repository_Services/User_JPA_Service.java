@@ -1,8 +1,8 @@
-package com.metatron.tech.model.Spring_Security.services;
+package com.metatron.tech.model.JPA_Repository_Services;
 
-import com.metatron.tech.model.Spring_Security.model.User;
-import com.metatron.tech.model.Spring_Security.repositories.UserRepository;
-import com.metatron.tech.model.services.serviceFactories.UsersService;
+import com.metatron.tech.model.entities.User;
+import com.metatron.tech.model.JPA_Repositories.UserRepository;
+import com.metatron.tech.model.Services_Interface.serviceFactories.UsersService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;

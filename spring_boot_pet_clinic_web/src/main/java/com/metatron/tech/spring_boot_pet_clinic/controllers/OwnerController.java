@@ -1,6 +1,6 @@
 package com.metatron.tech.spring_boot_pet_clinic.controllers;
 
-import com.metatron.tech.model.services.OwnerService;
+import com.metatron.tech.model.Services_Interface.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

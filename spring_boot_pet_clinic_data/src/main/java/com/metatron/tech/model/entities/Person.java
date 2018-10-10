@@ -2,7 +2,6 @@ package com.metatron.tech.model.entities;
 
 
 
-import com.metatron.tech.model.Spring_Security.model.User;
 import lombok.Getter;
 import lombok.Setter;
 

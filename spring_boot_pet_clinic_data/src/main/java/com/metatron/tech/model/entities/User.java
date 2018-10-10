@@ -1,8 +1,9 @@
-package com.metatron.tech.model.Spring_Security.model;
+package com.metatron.tech.model.entities;
 
 
 
 import com.metatron.tech.model.entities.Person;
+import com.metatron.tech.model.entities.Role;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
@@ -35,7 +36,7 @@ public class User  {
     private String email;
 
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> roles;
 

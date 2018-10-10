@@ -1,8 +1,8 @@
-package com.metatron.tech.model.Spring_Security.services;
+package com.metatron.tech.model.JPA_Repository_Services;
 
-import com.metatron.tech.model.Spring_Security.model.Role;
-import com.metatron.tech.model.Spring_Security.repositories.RoleRepository;
-import com.metatron.tech.model.services.RoleService;
+import com.metatron.tech.model.entities.Role;
+import com.metatron.tech.model.JPA_Repositories.RoleRepository;
+import com.metatron.tech.model.Services_Interface.RoleService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;

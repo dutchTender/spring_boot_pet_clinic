@@ -1,6 +1,6 @@
 package com.metatron.tech.spring_boot_pet_clinic.controllers;
 
-import com.metatron.tech.model.services.VetService;
+import com.metatron.tech.model.Services_Interface.VetService;
 
 
 

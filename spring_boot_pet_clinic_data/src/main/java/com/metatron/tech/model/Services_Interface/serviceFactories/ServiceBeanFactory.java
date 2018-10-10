@@ -1,8 +1,8 @@
-package com.metatron.tech.model.services.serviceFactories;
+package com.metatron.tech.model.Services_Interface.serviceFactories;
 
 
 
-import com.metatron.tech.model.services.*;
+import com.metatron.tech.model.Services_Interface.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,8 +16,9 @@ public class ServiceBeanFactory{
 
     private final RoleService roleService;
     private final UsersService usersService;
+    private final PrivilegeService privilegeService;
 
-    public ServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, RoleService roleService, UsersService usersService) {
+    public ServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, RoleService roleService, UsersService usersService, PrivilegeService privilegeService) {
         this.vetService = vetService;
         this.ownerService = ownerService;
         this.petService = petService;
@@ -26,6 +27,7 @@ public class ServiceBeanFactory{
         this.visitService = visitService;
         this.roleService = roleService;
         this.usersService = usersService;
+        this.privilegeService = privilegeService;
     }
 
 
@@ -59,5 +61,9 @@ public class ServiceBeanFactory{
 
     public UsersService getUsersService() {
         return usersService;
+    }
+
+    public PrivilegeService getPrivilegeService() {
+        return privilegeService;
     }
 }

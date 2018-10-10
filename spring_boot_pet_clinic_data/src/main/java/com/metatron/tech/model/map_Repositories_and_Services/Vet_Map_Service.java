@@ -1,7 +1,7 @@
 package com.metatron.tech.model.map_Repositories_and_Services;
 
 import com.metatron.tech.model.entities.Vet;
-import com.metatron.tech.model.services.VetService;
+import com.metatron.tech.model.Services_Interface.VetService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

@@ -1,10 +1,10 @@
 package com.metatron.tech.model.Spring_Security;
 
 
-import com.metatron.tech.model.Spring_Security.model.Role;
-import com.metatron.tech.model.Spring_Security.model.User;
-import com.metatron.tech.model.Spring_Security.repositories.RoleRepository;
-import com.metatron.tech.model.Spring_Security.repositories.UserRepository;
+import com.metatron.tech.model.entities.Role;
+import com.metatron.tech.model.entities.User;
+import com.metatron.tech.model.JPA_Repositories.RoleRepository;
+import com.metatron.tech.model.JPA_Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 @Service
-public class UserService {
+public class UserServiceExample {
 
 
     private final UserRepository userRepository;
@@ -21,7 +21,7 @@ public class UserService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserService(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserServiceExample(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;

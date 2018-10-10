@@ -20,6 +20,11 @@ public class IndexController {
            return "login";
        }
 
+    @RequestMapping({"/registration"})
+    public String register(){
 
+        System.out.println("222222222222222222222222222222222222");
+        return "registration/index";
+    }
 
 }

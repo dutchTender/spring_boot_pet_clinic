@@ -1,7 +1,7 @@
-package com.metatron.tech.model.Spring_Security.repositories;
+package com.metatron.tech.model.JPA_Repositories;
 
 
-import com.metatron.tech.model.Spring_Security.model.User;
+import com.metatron.tech.model.entities.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {

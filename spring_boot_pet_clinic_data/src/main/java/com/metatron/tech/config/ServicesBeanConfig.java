@@ -3,10 +3,10 @@ package com.metatron.tech.config;
 
 import com.metatron.tech.model.JPA_Repositories.*;
 import com.metatron.tech.model.JPA_Repository_Services.*;
-import com.metatron.tech.model.services.*;
+import com.metatron.tech.model.Services_Interface.*;
 
-import com.metatron.tech.model.services.serviceFactories.ServiceBeanFactory;
-import com.metatron.tech.model.services.serviceFactories.UsersService;
+import com.metatron.tech.model.Services_Interface.serviceFactories.ServiceBeanFactory;
+import com.metatron.tech.model.Services_Interface.serviceFactories.UsersService;
 import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.context.annotation.Bean;
@@ -56,8 +56,8 @@ public class ServicesBeanConfig {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*DI for ServiceBeanFactory ..which will call the 3 services below to initialize its constructor parameter list*/
     @Bean
-    ServiceBeanFactory getServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, RoleService roleService, UsersService usersService){
-        return new ServiceBeanFactory(vetService,ownerService, petService, petTypeService, specialtyService, visitService,roleService, usersService);
+    ServiceBeanFactory getServiceBeanFactory(VetService vetService, OwnerService ownerService, PetService petService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService, RoleService roleService, UsersService usersService, PrivilegeService privilegeService){
+        return new ServiceBeanFactory(vetService,ownerService, petService, petTypeService, specialtyService, visitService,roleService, usersService, privilegeService);
     }
 
 

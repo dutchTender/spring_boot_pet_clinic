@@ -1,10 +1,11 @@
-package com.metatron.tech.model.Spring_Security.repositories;
+package com.metatron.tech.model.JPA_Repositories;
 
 
-import com.metatron.tech.model.Spring_Security.model.Role;
+import com.metatron.tech.model.entities.Role;
 import org.springframework.data.repository.CrudRepository;
 
 public interface RoleRepository extends CrudRepository <Role, Long> {
 
     Role findByRole(String role);
+
 }

@@ -1,7 +1,7 @@
 package com.metatron.tech.model.map_Repositories_and_Services;
 
 import com.metatron.tech.model.entities.Visit;
-import com.metatron.tech.model.services.VisitService;
+import com.metatron.tech.model.Services_Interface.VisitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

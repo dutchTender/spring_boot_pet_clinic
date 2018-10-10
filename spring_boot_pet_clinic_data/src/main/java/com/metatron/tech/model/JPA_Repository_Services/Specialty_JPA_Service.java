@@ -2,7 +2,7 @@ package com.metatron.tech.model.JPA_Repository_Services;
 
 import com.metatron.tech.model.JPA_Repositories.SpecialtyRepository;
 import com.metatron.tech.model.entities.Speciality;
-import com.metatron.tech.model.services.SpecialtyService;
+import com.metatron.tech.model.Services_Interface.SpecialtyService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

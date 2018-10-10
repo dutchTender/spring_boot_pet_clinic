@@ -2,7 +2,6 @@ package com.metatron.tech.spring_boot_pet_clinic.config;
 
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -27,6 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+
+    // the data source will be auto injected by spring
     private final DataSource dataSource;
 
     public WebSecurityConfig( BCryptPasswordEncoder bCryptPasswordEncoder, DataSource dataSource) {
@@ -51,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/resources/**", "/h2-console/**", "/console/**","/webjars/**").permitAll()
+                .antMatchers( "/resources/**", "/h2-console/**", "/console/**","/webjars/**","/registration/**").permitAll()
                 //.antMatchers("/vets**","/owners**").hasRole("vet")
                 //.antMatchers("/owners","owner","/pet").hasRole("owner")
                 //.antMatchers("/owner**","/vet**","/pet**").hasRole("admin")

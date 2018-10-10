@@ -2,7 +2,7 @@ package com.metatron.tech.model.JPA_Repository_Services;
 
 import com.metatron.tech.model.JPA_Repositories.PetTypeRepository;
 import com.metatron.tech.model.entities.PetType;
-import com.metatron.tech.model.services.PetTypeService;
+import com.metatron.tech.model.Services_Interface.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
